@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class FullHouseTests {
 
@@ -20,12 +21,20 @@ public class FullHouseTests {
 
     @Test
     public void validate_ShouldReturnFalseWhenNotValidFullHouse() {
-        //arrange
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(2), new Die(3));
-        //act
+
         boolean actual = fullHouse.validate(dice);
-        //assert
+
         assertFalse(actual);
+    }
+
+    @Test
+    public void validate_ShouldReturnTrueWhenValidFullHouse() {
+        List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(2), new Die(2));
+
+        boolean actual = fullHouse.validate(dice);
+
+        assertTrue(actual);
     }
 
 }

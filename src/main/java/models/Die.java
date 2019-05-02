@@ -14,4 +14,5 @@ public class Die {
     public void setPips(int pips) {
         this.pips = pips;
     }
+
 }
