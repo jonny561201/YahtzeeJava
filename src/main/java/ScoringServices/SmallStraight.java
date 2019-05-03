@@ -4,7 +4,6 @@ import models.Die;
 import models.Scoring;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -20,7 +19,8 @@ public class SmallStraight extends Scoring {
     }
 
     private boolean isSequential(Set<Integer> pipSet) {
-        List<Integer> validLow = Arrays.asList(2,3,4,5);
-        return pipSet.containsAll(validLow);
+        List<Integer> validLow = Arrays.asList(1,2,3,4);
+        List<Integer> validMiddle = Arrays.asList(2,3,4,5);
+        return pipSet.containsAll(validLow) || pipSet.containsAll(validMiddle);
     }
 }

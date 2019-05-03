@@ -20,15 +20,6 @@ public class SmallStraightTests {
         assertEquals(0, actual);
     }
 
-    @Test
-    public void calculateScore_ShouldReturnThirtyWhenValidSmallStraight() {
-        SmallStraight straight = new SmallStraight();
-        List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(5), new Die(3));
-
-        int actual = straight.calculateScore(dice);
-
-        assertEquals(30, actual);
-    }
 
     @Test
     public void calculateScore_ShouldReturnThirtyWhenValidSmallStraightWhenMoreThanFourUniquePips() {
@@ -48,5 +39,25 @@ public class SmallStraightTests {
         int actual = straight.calculateScore(dice);
 
         assertEquals(0, actual);
+    }
+
+    @Test
+    public void calculateScore_ShouldReturnThirtyWhenValidLowerSmallStraight() {
+        SmallStraight straight = new SmallStraight();
+        List<Die> dice = Arrays.asList(new Die(1), new Die(3), new Die(4), new Die(6), new Die(2));
+
+        int actual = straight.calculateScore(dice);
+
+        assertEquals(30, actual);
+    }
+
+    @Test
+    public void calculateScore_ShouldReturnThirtyWhenValidMiddleSmallStraight() {
+        SmallStraight straight = new SmallStraight();
+        List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(5), new Die(3));
+
+        int actual = straight.calculateScore(dice);
+
+        assertEquals(30, actual);
     }
 }
