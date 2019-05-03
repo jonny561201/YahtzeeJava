@@ -1,11 +1,15 @@
-package ScoreTypes;
+package ScoringServices;
 
 import models.Die;
+import models.Scoring;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class FullHouse {
+public class FullHouse extends Scoring {
 
     public Integer calculateScore(List<Die> dice) {
         return !isValid(dice) ? 0 : 25;

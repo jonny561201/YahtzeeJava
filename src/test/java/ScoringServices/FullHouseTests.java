@@ -1,4 +1,4 @@
-package ScoreTypes;
+package ScoringServices;
 
 import models.Die;
 import org.junit.Before;
