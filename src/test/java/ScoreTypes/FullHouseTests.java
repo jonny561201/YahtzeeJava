@@ -7,8 +7,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class FullHouseTests {
 
@@ -20,39 +19,39 @@ public class FullHouseTests {
     }
 
     @Test
-    public void validate_ShouldReturnFalseWhenNotValidFullHouse() {
+    public void calculateScore_ShouldReturnZeroWhenNotValidFullHouse() {
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(2), new Die(3));
 
-        boolean actual = fullHouse.validate(dice);
+        int actual = fullHouse.calculateScore(dice);
 
-        assertFalse(actual);
+        assertEquals(0, actual);
     }
 
     @Test
-    public void validate_ShouldReturnFalseWhenTwoSetsWithoutFullHouse() {
+    public void calculateScore_ShouldReturnZeroWhenTwoSetsWithoutFullHouse() {
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(1), new Die(2));
 
-        boolean actual = fullHouse.validate(dice);
+        int actual = fullHouse.calculateScore(dice);
 
-        assertFalse(actual);
+        assertEquals(0, actual);
     }
 
     @Test
-    public void validate_ShouldReturnFalseWhenTwoSetsAndLastSetHasFourItems() {
+    public void calculateScore_ShouldReturnZeroWhenTwoSetsAndLastSetHasFourItems() {
         List<Die> dice = Arrays.asList(new Die(1), new Die(2), new Die(2), new Die(2), new Die(2));
 
-        boolean actual = fullHouse.validate(dice);
+        int actual = fullHouse.calculateScore(dice);
 
-        assertFalse(actual);
+        assertEquals(0, actual);
     }
 
     @Test
-    public void validate_ShouldReturnTrueWhenValidFullHouse() {
+    public void calculateScore_ShouldReturnTwentyFiveWhenValidFullHouse() {
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(2), new Die(2));
 
-        boolean actual = fullHouse.validate(dice);
+        int actual = fullHouse.calculateScore(dice);
 
-        assertTrue(actual);
+        assertEquals(25, actual);
     }
 
 }
