@@ -1,6 +1,7 @@
 package ScoringServices;
 
 import models.Die;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -10,9 +11,15 @@ import static org.junit.Assert.assertEquals;
 
 public class SmallStraightTests {
 
+    private SmallStraight straight;
+
+    @Before
+    public void Setup() {
+        straight = new SmallStraight();
+    }
+
     @Test
     public void calculateScore_ShouldReturnZeroWhenNotAValidSmallStraight() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(2), new Die(3));
 
         int actual = straight.calculateScore(dice);
@@ -23,7 +30,6 @@ public class SmallStraightTests {
 
     @Test
     public void calculateScore_ShouldReturnThirtyWhenValidSmallStraightWhenMoreThanFourUniquePips() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(5), new Die(6));
 
         int actual = straight.calculateScore(dice);
@@ -33,7 +39,6 @@ public class SmallStraightTests {
 
     @Test
     public void calculateScore_ShouldReturnZeroWhenNonSequentialSetOfFour() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(1), new Die(2), new Die(4), new Die(5), new Die(6));
 
         int actual = straight.calculateScore(dice);
@@ -43,7 +48,6 @@ public class SmallStraightTests {
 
     @Test
     public void calculateScore_ShouldReturnThirtyWhenValidLowerSmallStraight() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(1), new Die(3), new Die(4), new Die(6), new Die(2));
 
         int actual = straight.calculateScore(dice);
@@ -53,7 +57,6 @@ public class SmallStraightTests {
 
     @Test
     public void calculateScore_ShouldReturnThirtyWhenValidMiddleSmallStraight() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(5), new Die(3));
 
         int actual = straight.calculateScore(dice);
@@ -63,7 +66,6 @@ public class SmallStraightTests {
 
     @Test
     public void calculateScore_ShouldReturnThirtyWhenValidUpperSmallStraight() {
-        SmallStraight straight = new SmallStraight();
         List<Die> dice = Arrays.asList(new Die(6), new Die(5), new Die(4), new Die(3), new Die(6));
 
         int actual = straight.calculateScore(dice);
