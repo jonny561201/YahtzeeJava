@@ -12,6 +12,14 @@ public class LargeStraight extends Scoring {
         List<Integer> pips = dice.stream().map(x -> x.getPips()).collect(Collectors.toList());
         HashSet<Integer> pipSet = new HashSet<>(pips);
 
-        return pipSet.size() == 5 && !(pips.contains(1) && pips.contains(6)) ? 40 : 0;
+        return areDiceUnique(pipSet) && !containsBothBounds(pips) ? 40 : 0;
+    }
+
+    private boolean areDiceUnique(HashSet<Integer> pipSet) {
+        return pipSet.size() == 5;
+    }
+
+    private boolean containsBothBounds(List<Integer> pips) {
+        return (pips.contains(1) && pips.contains(6));
     }
 }
