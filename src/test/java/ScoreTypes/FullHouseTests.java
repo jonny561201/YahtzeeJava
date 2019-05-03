@@ -29,6 +29,24 @@ public class FullHouseTests {
     }
 
     @Test
+    public void validate_ShouldReturnFalseWhenTwoSetsWithoutFullHouse() {
+        List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(1), new Die(2));
+
+        boolean actual = fullHouse.validate(dice);
+
+        assertFalse(actual);
+    }
+
+    @Test
+    public void validate_ShouldReturnFalseWhenTwoSetsAndLastSetHasFourItems() {
+        List<Die> dice = Arrays.asList(new Die(1), new Die(2), new Die(2), new Die(2), new Die(2));
+
+        boolean actual = fullHouse.validate(dice);
+
+        assertFalse(actual);
+    }
+
+    @Test
     public void validate_ShouldReturnTrueWhenValidFullHouse() {
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(2), new Die(2));
 
