@@ -2,12 +2,12 @@ package Factories;
 
 import ScoringServices.FullHouse;
 import ScoringServices.LargeStraight;
+import ScoringServices.SmallStraight;
 import models.Scoring;
 import org.junit.Before;
 import org.junit.Test;
 
-import static models.ScoringEnums.FULL_HOUSE;
-import static models.ScoringEnums.LARGE_STRAIGHT;
+import static models.ScoringEnums.*;
 import static org.junit.Assert.assertEquals;
 
 public class ScoringFactoryTests {
@@ -31,5 +31,12 @@ public class ScoringFactoryTests {
         Scoring actual = factory.create(LARGE_STRAIGHT);
 
         assertEquals(LargeStraight.class, actual.getClass());
+    }
+
+    @Test
+    public void create_ShouldReturnSmallStraightObjectWhenScoringSmallStraight() {
+        Scoring actual = factory.create(SMALL_STRAIGHT);
+
+        assertEquals(SmallStraight.class, actual.getClass());
     }
 }
