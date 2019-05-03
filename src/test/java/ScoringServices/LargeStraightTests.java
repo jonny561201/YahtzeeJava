@@ -20,4 +20,13 @@ public class LargeStraightTests {
         assertEquals(0, actual);
     }
 
+    @Test
+    public void calculateScore_ShouldReturnFortyIfALargeStraight() {
+        LargeStraight straight = new LargeStraight();
+        List<Die> dice = Arrays.asList(new Die(2), new Die(3), new Die(4), new Die(5), new Die(6));
+
+        int actual = straight.calculateScore(dice);
+
+        assertEquals(40, actual);
+    }
 }
