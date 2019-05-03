@@ -1,5 +1,6 @@
 package models;
 
 public enum ScoringEnums {
-    FULL_HOUSE
+    FULL_HOUSE,
+    LARGE_STRAIGHT
 }
