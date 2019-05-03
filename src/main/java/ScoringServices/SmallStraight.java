@@ -21,6 +21,7 @@ public class SmallStraight extends Scoring {
     private boolean isSequential(Set<Integer> pipSet) {
         List<Integer> validLow = Arrays.asList(1,2,3,4);
         List<Integer> validMiddle = Arrays.asList(2,3,4,5);
-        return pipSet.containsAll(validLow) || pipSet.containsAll(validMiddle);
+        List<Integer> validHigh = Arrays.asList(3,4,5,6);
+        return pipSet.containsAll(validLow) || pipSet.containsAll(validMiddle) || pipSet.containsAll(validHigh);
     }
 }
