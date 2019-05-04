@@ -49,6 +49,6 @@ public class ScoringFactoryTests {
     public void create_ShouldReturnOnesObjectWhenScoringOnes() {
         Scoring actual = factory.create(ONES);
 
-        assertEquals(Ones.class, actual.getClass());
+        assertEquals(NumberScores.class, actual.getClass());
     }
 }

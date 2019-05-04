@@ -20,7 +20,7 @@ public class ScoringFactory {
             return new Yahtzee();
         }
         else if (scoring.equals(ScoringEnums.ONES)) {
-            return new Ones();
+            return new NumberScores(1);
         }
         return null;
     }
