@@ -9,5 +9,6 @@ public enum ScoringEnums {
     THREES,
     FOURS,
     FIVES,
+    SIXES,
     ONES
 }

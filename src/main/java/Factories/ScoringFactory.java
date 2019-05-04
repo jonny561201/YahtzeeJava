@@ -34,6 +34,9 @@ public class ScoringFactory {
         else if (scoring.equals(ScoringEnums.FIVES)) {
             return new NumberScores(5);
         }
+        else if (scoring.equals(ScoringEnums.SIXES)) {
+            return new NumberScores(6);
+        }
         return null;
     }
 }
