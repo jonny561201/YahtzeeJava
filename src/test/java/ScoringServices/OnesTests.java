@@ -1,6 +1,7 @@
 package ScoringServices;
 
 import models.Die;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -10,9 +11,15 @@ import static org.junit.Assert.assertEquals;
 
 public class OnesTests {
 
+    private Ones ones;
+
+    @Before
+    public void setUp() {
+        ones = new Ones();
+    }
+
     @Test
     public void calculateScore_shouldReturnZeroWhenInvalidOnes() {
-        Ones ones = new Ones();
         List<Die> dice = Arrays.asList(new Die(2), new Die(2), new Die(2), new Die(2), new Die(2));
 
         int actual = ones.calculateScore(dice);
@@ -22,7 +29,6 @@ public class OnesTests {
 
     @Test
     public void calculateScore_shouldReturnOneWhenSingluarOnePip() {
-        Ones ones = new Ones();
         List<Die> dice = Arrays.asList(new Die(1), new Die(2), new Die(2), new Die(2), new Die(2));
 
         int actual = ones.calculateScore(dice);
@@ -32,7 +38,6 @@ public class OnesTests {
 
     @Test
     public void calculateScore_shouldReturnFivePointsWhenFedFiveOnes() {
-        Ones ones = new Ones();
         List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(1), new Die(1));
 
         int actual = ones.calculateScore(dice);
