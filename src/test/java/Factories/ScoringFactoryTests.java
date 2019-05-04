@@ -58,4 +58,11 @@ public class ScoringFactoryTests {
 
         assertEquals(NumberScores.class, actual.getClass());
     }
+
+    @Test
+    public void create_ShouldReturnNumberScoreObjectWhenScoringThrees() {
+        Scoring actual = factory.create(THREES);
+
+        assertEquals(NumberScores.class, actual.getClass());
+    }
 }
