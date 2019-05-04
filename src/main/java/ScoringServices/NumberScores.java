@@ -17,6 +17,6 @@ public class NumberScores extends Scoring {
     public Integer calculateScore(List<Die> dice) {
 
         List<Die> ones = dice.stream().filter(x -> x.getPips() == number).collect(Collectors.toList());
-        return ones.size();
+        return ones.size() * number;
     }
 }
