@@ -1,9 +1,6 @@
 package Factories;
 
-import ScoringServices.FullHouse;
-import ScoringServices.LargeStraight;
-import ScoringServices.SmallStraight;
-import ScoringServices.Yahtzee;
+import ScoringServices.*;
 import models.Scoring;
 import models.ScoringEnums;
 
@@ -21,6 +18,9 @@ public class ScoringFactory {
         }
         else if (scoring.equals(ScoringEnums.YAHTZEE)) {
             return new Yahtzee();
+        }
+        else if (scoring.equals(ScoringEnums.ONES)) {
+            return new Ones();
         }
         return null;
     }

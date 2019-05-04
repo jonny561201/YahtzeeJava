@@ -1,9 +1,6 @@
 package Factories;
 
-import ScoringServices.FullHouse;
-import ScoringServices.LargeStraight;
-import ScoringServices.SmallStraight;
-import ScoringServices.Yahtzee;
+import ScoringServices.*;
 import models.Scoring;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,5 +43,12 @@ public class ScoringFactoryTests {
         Scoring actual = factory.create(YAHTZEE);
 
         assertEquals(Yahtzee.class, actual.getClass());
+    }
+
+    @Test
+    public void create_ShouldReturnOnesObjectWhenScoringOnes() {
+        Scoring actual = factory.create(ONES);
+
+        assertEquals(Ones.class, actual.getClass());
     }
 }
