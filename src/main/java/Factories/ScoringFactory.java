@@ -22,6 +22,9 @@ public class ScoringFactory {
         else if (scoring.equals(ScoringEnums.ONES)) {
             return new NumberScores(1);
         }
+        else if (scoring.equals(ScoringEnums.TWOS)) {
+            return new NumberScores(2);
+        }
         return null;
     }
 }

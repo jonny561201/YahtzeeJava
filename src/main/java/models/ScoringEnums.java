@@ -5,5 +5,6 @@ public enum ScoringEnums {
     LARGE_STRAIGHT,
     SMALL_STRAIGHT,
     YAHTZEE,
+    TWOS,
     ONES
 }

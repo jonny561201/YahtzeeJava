@@ -46,8 +46,15 @@ public class ScoringFactoryTests {
     }
 
     @Test
-    public void create_ShouldReturnOnesObjectWhenScoringOnes() {
+    public void create_ShouldReturnNumberScoreObjectWhenScoringOnes() {
         Scoring actual = factory.create(ONES);
+
+        assertEquals(NumberScores.class, actual.getClass());
+    }
+
+    @Test
+    public void create_ShouldReturnNumberScoreObjectWhenScoringTwos() {
+        Scoring actual = factory.create(TWOS);
 
         assertEquals(NumberScores.class, actual.getClass());
     }
