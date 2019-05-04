@@ -30,4 +30,14 @@ public class OnesTests {
         assertEquals(1, actual);
     }
 
+    @Test
+    public void calculateScore_shouldReturnFivePointsWhenFedFiveOnes() {
+        Ones ones = new Ones();
+        List<Die> dice = Arrays.asList(new Die(1), new Die(1), new Die(1), new Die(1), new Die(1));
+
+        int actual = ones.calculateScore(dice);
+
+        assertEquals(5, actual);
+    }
+
 }
