@@ -28,6 +28,9 @@ public class ScoringFactory {
         else if (scoring.equals(ScoringEnums.THREES)) {
             return new NumberScores(3);
         }
+        else if (scoring.equals(ScoringEnums.FOURS)) {
+            return new NumberScores(4);
+        }
         return null;
     }
 }

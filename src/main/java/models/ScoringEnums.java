@@ -7,5 +7,6 @@ public enum ScoringEnums {
     YAHTZEE,
     TWOS,
     THREES,
+    FOURS,
     ONES
 }
