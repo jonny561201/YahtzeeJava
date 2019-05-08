@@ -22,25 +22,28 @@ public class ScoringFactory {
             return new Yahtzee();
         }
         else if (scoring.equals(ONES)) {
-            return new NumberScores(ONES.values);
+            return new NumberScores(ONES.value);
         }
         else if (scoring.equals(TWOS)) {
-            return new NumberScores(TWOS.values);
+            return new NumberScores(TWOS.value);
         }
         else if (scoring.equals(THREES)) {
-            return new NumberScores(THREES.values);
+            return new NumberScores(THREES.value);
         }
         else if (scoring.equals(FOURS)) {
-            return new NumberScores(FOURS.values);
+            return new NumberScores(FOURS.value);
         }
         else if (scoring.equals(FIVES)) {
-            return new NumberScores(FIVES.values);
+            return new NumberScores(FIVES.value);
         }
         else if (scoring.equals(SIXES)) {
-            return new NumberScores(SIXES.values);
+            return new NumberScores(SIXES.value);
         }
         else if (scoring.equals(THREE_OF_A_KIND)) {
-            return new OfAKind(3);
+            return new OfAKind(THREE_OF_A_KIND);
+        }
+        else if (scoring.equals(FOUR_OF_A_KIND)) {
+            return new OfAKind(FOUR_OF_A_KIND);
         }
         return null;
     }

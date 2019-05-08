@@ -11,11 +11,12 @@ public enum ScoringEnums {
     FOURS(4),
     FIVES(5),
     SIXES(6),
-    THREE_OF_A_KIND(null);
+    THREE_OF_A_KIND(3),
+    FOUR_OF_A_KIND(4);
 
-    public Integer values;
+    public Integer value;
 
-    ScoringEnums(Integer values){
-        this.values = values;
+    ScoringEnums(Integer value){
+        this.value = value;
     }
 }

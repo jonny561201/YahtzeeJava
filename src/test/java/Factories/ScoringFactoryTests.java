@@ -93,4 +93,11 @@ public class ScoringFactoryTests {
 
         assertEquals(OfAKind.class, actual.getClass());
     }
+
+    @Test
+    public void create_ShouldReturnFourOfAKindObjectWhenScoringFourOfAKind() {
+        Scoring actual = factory.create(FOUR_OF_A_KIND);
+
+        assertEquals(OfAKind.class, actual.getClass());
+    }
 }

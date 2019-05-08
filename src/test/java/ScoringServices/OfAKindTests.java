@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static models.ScoringEnums.FOUR_OF_A_KIND;
+import static models.ScoringEnums.THREE_OF_A_KIND;
 import static org.junit.Assert.assertEquals;
 
 public class OfAKindTests {
@@ -16,8 +18,8 @@ public class OfAKindTests {
 
     @Before
     public void setUp() {
-        threeOfAKind = new OfAKind(3);
-        fourOfAKind = new OfAKind(4);
+        threeOfAKind = new OfAKind(THREE_OF_A_KIND);
+        fourOfAKind = new OfAKind(FOUR_OF_A_KIND);
     }
 
     @Test
