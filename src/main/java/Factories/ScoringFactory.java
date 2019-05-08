@@ -40,7 +40,7 @@ public class ScoringFactory {
             return new NumberScores(SIXES.values);
         }
         else if (scoring.equals(THREE_OF_A_KIND)) {
-            return new ThreeOfAKind();
+            return new OfAKind(3);
         }
         return null;
     }

@@ -91,6 +91,6 @@ public class ScoringFactoryTests {
     public void create_ShouldReturnThreeOfAKindObjectWhenScoringThreeOfAKind() {
         Scoring actual = factory.create(THREE_OF_A_KIND);
 
-        assertEquals(ThreeOfAKind.class, actual.getClass());
+        assertEquals(OfAKind.class, actual.getClass());
     }
 }
