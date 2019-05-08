@@ -11,6 +11,6 @@ public class ThreeOfAKind extends Scoring {
 
     public Integer calculateScore(List<Die> dice) {
         Set<Integer> pipSet = dice.stream().map(x -> x.getPips()).collect(Collectors.toSet());
-        return (pipSet.size() == 3) ? 20 : 0;
+        return (pipSet.size() <= 3) ? 20 : 0;
     }
 }
