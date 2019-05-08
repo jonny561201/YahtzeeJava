@@ -20,4 +20,14 @@ public class ThreeOfAKindTests {
         assertEquals(0, actual);
     }
 
+    @Test
+    public void calculateScore_shouldReturnTwentyForValidThreeOfAKind() {
+        ThreeOfAKind threeOfAKind = new ThreeOfAKind();
+        List<Die> dice = Arrays.asList(new Die(2), new Die(2), new Die(2), new Die(4), new Die(5));
+
+        int actual = threeOfAKind.calculateScore(dice);
+
+        assertEquals(20, actual);
+    }
+
 }
