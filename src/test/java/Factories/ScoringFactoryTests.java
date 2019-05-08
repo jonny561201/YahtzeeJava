@@ -86,4 +86,11 @@ public class ScoringFactoryTests {
 
         assertEquals(NumberScores.class, actual.getClass());
     }
+
+    @Test
+    public void create_ShouldReturnThreeOfAKindObjectWhenScoringThreeOfAKind() {
+        Scoring actual = factory.create(THREE_OF_A_KIND);
+
+        assertEquals(ThreeOfAKind.class, actual.getClass());
+    }
 }

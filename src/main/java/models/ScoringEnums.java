@@ -10,7 +10,8 @@ public enum ScoringEnums {
     THREES(3),
     FOURS(4),
     FIVES(5),
-    SIXES(6);
+    SIXES(6),
+    THREE_OF_A_KIND(null);
 
     public Integer values;
 

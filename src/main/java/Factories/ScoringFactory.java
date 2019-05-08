@@ -39,6 +39,9 @@ public class ScoringFactory {
         else if (scoring.equals(SIXES)) {
             return new NumberScores(SIXES.values);
         }
+        else if (scoring.equals(THREE_OF_A_KIND)) {
+            return new ThreeOfAKind();
+        }
         return null;
     }
 }
