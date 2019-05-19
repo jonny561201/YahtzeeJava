@@ -29,6 +29,8 @@ public enum ScoringEnums {
             return YAHTZEE;
         } else if (scoreType.equals("Ones")) {
             return ONES;
+        } else if (scoreType.equals("Twos")) {
+            return TWOS;
         }
         return FULL_HOUSE;
     }
