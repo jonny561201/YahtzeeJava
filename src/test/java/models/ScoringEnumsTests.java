@@ -34,4 +34,11 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(YAHTZEE, actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateOnesStringToEnum() {
+        String scoreType = "Ones";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(ONES, actual);
+    }
 }

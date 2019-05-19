@@ -27,6 +27,8 @@ public enum ScoringEnums {
             return SMALL_STRAIGHT;
         } else if (scoreType.equals("Yahtzee")) {
             return YAHTZEE;
+        } else if (scoreType.equals("Ones")) {
+            return ONES;
         }
         return FULL_HOUSE;
     }
