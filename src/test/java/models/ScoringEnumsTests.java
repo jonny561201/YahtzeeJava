@@ -112,4 +112,18 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(YAHTZEE, actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateEnumUsingCamelCase() {
+        String scoreType = "threeOfAKind";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(THREE_OF_A_KIND, actual);
+    }
+
+    @Test
+    public void parse_ShouldTranslateEnumUsingSnakeCase() {
+        String scoreType = "three_Of_A_Kind";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(THREE_OF_A_KIND, actual);
+    }
 }
