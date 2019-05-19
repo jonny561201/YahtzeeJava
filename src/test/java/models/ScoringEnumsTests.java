@@ -105,4 +105,11 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertNull(actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateEnumWithLeadingAndTrailingWhitespace() {
+        String scoreType = " Yahtzee ";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(YAHTZEE, actual);
+    }
 }
