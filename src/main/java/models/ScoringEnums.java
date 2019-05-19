@@ -19,4 +19,8 @@ public enum ScoringEnums {
     ScoringEnums(Integer value){
         this.value = value;
     }
+
+    public static ScoringEnums parse(String scoreType) {
+        return FULL_HOUSE;
+    }
 }
