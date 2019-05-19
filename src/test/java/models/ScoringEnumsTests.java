@@ -90,4 +90,11 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(FOUR_OF_A_KIND, actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateWithRandomCapitalization() {
+        String scoreType = "YaHtzEe";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(YAHTZEE, actual);
+    }
 }

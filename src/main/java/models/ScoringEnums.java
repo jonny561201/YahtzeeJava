@@ -25,7 +25,7 @@ public enum ScoringEnums {
             return LARGE_STRAIGHT;
         } else if (scoreType.equals("Small Straight")) {
             return SMALL_STRAIGHT;
-        } else if (scoreType.equals("Yahtzee")) {
+        } else if (scoreType.toLowerCase().equals("yahtzee")) {
             return YAHTZEE;
         } else if (scoreType.equals("Ones")) {
             return ONES;
