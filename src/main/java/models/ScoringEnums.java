@@ -1,5 +1,7 @@
 package models;
 
+import java.util.stream.Stream;
+
 public enum ScoringEnums {
     FULL_HOUSE(null),
     LARGE_STRAIGHT(null),
@@ -21,29 +23,12 @@ public enum ScoringEnums {
     }
 
     public static ScoringEnums parse(String scoreType) {
-        if (scoreType.equals("Large Straight")) {
-            return LARGE_STRAIGHT;
-        } else if (scoreType.equals("Small Straight")) {
-            return SMALL_STRAIGHT;
-        } else if (scoreType.toLowerCase().equals("yahtzee")) {
-            return YAHTZEE;
-        } else if (scoreType.equals("Ones")) {
-            return ONES;
-        } else if (scoreType.equals("Twos")) {
-            return TWOS;
-        } else if (scoreType.equals("Threes")) {
-            return THREES;
-        } else if (scoreType.equals("Fours")) {
-            return FOURS;
-        } else if (scoreType.equals("Fives")) {
-            return FIVES;
-        } else if (scoreType.equals("Sixes")) {
-            return SIXES;
-        } else if (scoreType.equals("Three of a Kind")) {
-            return THREE_OF_A_KIND;
-        } else if (scoreType.equals("Four of a Kind")) {
-            return FOUR_OF_A_KIND;
-        }
-        return FULL_HOUSE;
+        return Stream.of(ScoringEnums.values())
+                .filter(x -> stringifyEnum(x).equals(scoreType.toUpperCase()))
+                .findFirst().get();
+    }
+
+    private static String stringifyEnum(ScoringEnums enumName) {
+        return enumName.toString().replace("_", " ").toUpperCase();
     }
 }
