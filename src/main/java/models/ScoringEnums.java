@@ -41,6 +41,8 @@ public enum ScoringEnums {
             return SIXES;
         } else if (scoreType.equals("Three of a Kind")) {
             return THREE_OF_A_KIND;
+        } else if (scoreType.equals("Four of a Kind")) {
+            return FOUR_OF_A_KIND;
         }
         return FULL_HOUSE;
     }
