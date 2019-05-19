@@ -13,7 +13,8 @@ public class ScoreController {
     }
 
     public ScoreResult score(String scoreType) {
-        this.factory.create(ScoringEnums.FULL_HOUSE);
+        ScoringEnums scoreEnum = ScoringEnums.parse(scoreType);
+        this.factory.create(scoreEnum);
         return null;
     }
 }
