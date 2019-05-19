@@ -31,6 +31,8 @@ public enum ScoringEnums {
             return ONES;
         } else if (scoreType.equals("Twos")) {
             return TWOS;
+        } else if (scoreType.equals("Threes")) {
+            return THREES;
         }
         return FULL_HOUSE;
     }
