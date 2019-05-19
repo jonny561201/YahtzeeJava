@@ -2,8 +2,7 @@ package models;
 
 import org.junit.Test;
 
-import static models.ScoringEnums.FULL_HOUSE;
-import static models.ScoringEnums.LARGE_STRAIGHT;
+import static models.ScoringEnums.*;
 import static org.junit.Assert.assertEquals;
 
 public class ScoringEnumsTests {
@@ -20,5 +19,12 @@ public class ScoringEnumsTests {
         String scoreType = "Large Straight";
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(LARGE_STRAIGHT, actual);
+    }
+
+    @Test
+    public void parse_ShouldTranslateSmallStraightStringToEnum() {
+        String scoreType = "Small Straight";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(SMALL_STRAIGHT, actual);
     }
 }

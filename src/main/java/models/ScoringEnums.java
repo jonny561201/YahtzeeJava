@@ -23,6 +23,8 @@ public enum ScoringEnums {
     public static ScoringEnums parse(String scoreType) {
         if (scoreType.equals("Large Straight")) {
             return LARGE_STRAIGHT;
+        } else if (scoreType.equals("Small Straight")) {
+            return SMALL_STRAIGHT;
         }
         return FULL_HOUSE;
     }
