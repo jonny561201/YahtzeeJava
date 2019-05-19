@@ -27,8 +27,6 @@ public class ScoreController {
 
         Integer score = scoring.calculateScore(roll);
 
-        ScoreResult result = new ScoreResult();
-        result.setScore(score);
-        return result;
+        return new ScoreResult(score);
     }
 }
