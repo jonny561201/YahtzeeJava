@@ -2,9 +2,12 @@ package Controllers;
 
 import Factories.ScoringFactory;
 import Repositories.RollsTable;
+import models.Die;
 import models.ScoreResult;
+import models.Scoring;
 import models.ScoringEnums;
 
+import java.util.List;
 import java.util.UUID;
 
 public class ScoreController {
@@ -19,8 +22,13 @@ public class ScoreController {
 
     public ScoreResult score(String scoreType, UUID rollId) {
         ScoringEnums scoreEnum = ScoringEnums.parse(scoreType);
-        this.factory.create(scoreEnum);
-        this.rollsTable.selectRollByPlayerGame(rollId);
-        return null;
+        Scoring scoring = this.factory.create(scoreEnum);
+        List<Die> roll = this.rollsTable.selectRollByPlayerGame(rollId);
+
+        Integer score = scoring.calculateScore(roll);
+
+        ScoreResult result = new ScoreResult();
+        result.setScore(score);
+        return result;
     }
 }
