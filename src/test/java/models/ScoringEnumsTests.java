@@ -55,4 +55,11 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(THREES, actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateFoursStringToEnum() {
+        String scoreType = "Fours";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(FOURS, actual);
+    }
 }
