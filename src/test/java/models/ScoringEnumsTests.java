@@ -27,4 +27,11 @@ public class ScoringEnumsTests {
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(SMALL_STRAIGHT, actual);
     }
+
+    @Test
+    public void parse_ShouldTranslateYahtzeeStringToEnum() {
+        String scoreType = "Yahtzee";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertEquals(YAHTZEE, actual);
+    }
 }
