@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static models.ScoringEnums.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class ScoringEnumsTests {
 
@@ -96,5 +97,12 @@ public class ScoringEnumsTests {
         String scoreType = "YaHtzEe";
         ScoringEnums actual = ScoringEnums.parse(scoreType);
         assertEquals(YAHTZEE, actual);
+    }
+
+    @Test
+    public void parse_ShouldDefaultToNull() {
+        String scoreType = "badEnum";
+        ScoringEnums actual = ScoringEnums.parse(scoreType);
+        assertNull(actual);
     }
 }

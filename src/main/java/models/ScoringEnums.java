@@ -25,7 +25,7 @@ public enum ScoringEnums {
     public static ScoringEnums parse(String scoreType) {
         return Stream.of(ScoringEnums.values())
                 .filter(x -> stringifyEnum(x).equals(scoreType.toUpperCase()))
-                .findFirst().get();
+                .findFirst().orElse(null);
     }
 
     private static String stringifyEnum(ScoringEnums enumName) {
