@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,6 +29,14 @@ public class RollsTableIT {
         long threesCount = 4;
         long count = dice.stream().filter(x -> x.getPips() == 3).count();
         assertEquals(threesCount, count);
+    }
+
+    @Test
+    public void selectRollByRollId_ShouldReturnEmptyListWhenRollNotFound() {
+        UUID expectedID = UUID.randomUUID();
+        List<Die> dice = table.selectRollByRollId(expectedID);
+
+        assertEquals(Collections.EMPTY_LIST, dice);
     }
 
 }
