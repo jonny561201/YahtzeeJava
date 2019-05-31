@@ -1,9 +1,9 @@
 package com.models;
 
-public class ScoreResult {
+public class ScoreResponse {
     private Integer score;
 
-    public ScoreResult(Integer score) {
+    public ScoreResponse(Integer score) {
         this.score = score;
     }
 

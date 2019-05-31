@@ -3,9 +3,11 @@ package com.Factories;
 import com.ScoringServices.*;
 import com.models.Scoring;
 import com.models.ScoringEnums;
+import org.springframework.stereotype.Component;
 
 import static com.models.ScoringEnums.*;
 
+@Component
 public class ScoringFactory {
 
     public Scoring create(ScoringEnums scoring) {

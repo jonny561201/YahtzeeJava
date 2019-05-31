@@ -1,5 +1,6 @@
 package com.Controllers;
 
+import com.models.ScoreRequest;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,8 +23,9 @@ public class RestControllerTest {
     public void scoreRoll_should_call_score_controller() {
         String scoreType = "Yahtzee";
         UUID rollId = UUID.randomUUID();
+        ScoreRequest request = new ScoreRequest(scoreType, rollId);
 
-        controller.scoreRoll(scoreType, rollId);
+        controller.scoreRoll(request);
 
         verify(scoreController, times(1)).score(scoreType, rollId);
     }

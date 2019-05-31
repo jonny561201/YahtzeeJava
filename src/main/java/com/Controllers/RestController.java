@@ -1,19 +1,24 @@
 package com.Controllers;
 
-import com.models.ScoreResult;
+import com.models.ScoreRequest;
+import com.models.ScoreResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.UUID;
 
+@org.springframework.web.bind.annotation.RestController
 public class RestController {
 
     private ScoreController scoreController;
 
+    @Autowired
     public RestController(ScoreController scoreController) {
         this.scoreController = scoreController;
     }
 
-
-    public ScoreResult scoreRoll(String scoreType, UUID rollId) {
-        return scoreController.score(scoreType, rollId);
+    @PostMapping("/scoreRoll")
+    public ScoreResponse scoreRoll(@RequestBody ScoreRequest request) {
+        return scoreController.score(request.getScoreType(), request.getRollId());
     }
 }

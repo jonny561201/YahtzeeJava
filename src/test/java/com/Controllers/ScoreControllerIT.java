@@ -3,7 +3,7 @@ package com.Controllers;
 import com.Factories.ScoringFactory;
 import com.Repositories.RollsTable;
 import com.models.Die;
-import com.models.ScoreResult;
+import com.models.ScoreResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,7 +36,7 @@ public class ScoreControllerIT {
         List<Die> roll = Arrays.asList(new Die(2), new Die(2), new Die(5), new Die(6), new Die(2));
         when(rollsTable.selectRollByRollId(rollId)).thenReturn(roll);
 
-        ScoreResult actual = controller.score(scoreType, rollId);
+        ScoreResponse actual = controller.score(scoreType, rollId);
 
         Integer expectedScore = 6;
         assertEquals(expectedScore, actual.getScore());
