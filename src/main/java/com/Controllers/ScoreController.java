@@ -28,7 +28,7 @@ public class ScoreController {
     public ScoreResponse score(String scoreType, UUID rollId) {
         ScoringEnums scoreEnum = ScoringEnums.parse(scoreType);
         Scoring scoring = this.factory.create(scoreEnum);
-        List<Die> roll = Arrays.asList(new Die(4));
+        List<Die> roll = Arrays.asList(new Die(4), new Die(4));
 
         Integer score = scoring.calculateScore(roll);
 
