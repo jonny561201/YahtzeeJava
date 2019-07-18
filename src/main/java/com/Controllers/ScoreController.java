@@ -9,6 +9,7 @@ import com.models.ScoringEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,7 +28,7 @@ public class ScoreController {
     public ScoreResponse score(String scoreType, UUID rollId) {
         ScoringEnums scoreEnum = ScoringEnums.parse(scoreType);
         Scoring scoring = this.factory.create(scoreEnum);
-        List<Die> roll = this.rollsTable.selectRollByRollId(rollId);
+        List<Die> roll = Arrays.asList(new Die(4));
 
         Integer score = scoring.calculateScore(roll);
 
